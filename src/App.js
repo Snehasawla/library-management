@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { LibraryProvider } from "./context/LibraryContext";
+import BookList from "./components/BookList";
+import BorrowedList from "./components/BorrowedList";
+import "./styles.css";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <LibraryProvider>
+      <div className="app">
+        <h1>📖 Library Management</h1>
+        <div className="container">
+          <BookList />
+          <BorrowedList />
+        </div>
+      </div>
+    </LibraryProvider>
   );
 }
 
